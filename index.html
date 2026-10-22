@@ -10,6 +10,10 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+<div class="intro-screen" id="introScreen">
+  <div class="intro-logo">NOVA<span>.</span></div>
+  <p>DESIGNING WHAT'S NEXT</p>
+</div>
   <header class="navbar">
     <a class="logo" href="#home"><span>N</span> NOVA<span class="mint">.</span></a>
     <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
@@ -18,6 +22,8 @@
       <a href="#work">Our Work</a>
       <a href="#about">About</a>
       <a class="nav-cta" href="#contact">Let's Talk ↗</a>
+<button class="auth-button" id="signInBtn">Sign In</button>
+<button class="auth-button auth-primary" id="signUpBtn">Sign Up ↗</button>
     </nav>
   </header>
 
@@ -107,5 +113,53 @@
   </main>
 
   <footer><a class="logo" href="#home"><span>N</span> NOVA<span class="mint">.</span></a><p>Independent by nature. Digital by design.</p><span>© <span id="year"></span> NOVA Digital · Concept portfolio</span></footer>
+
+<div class="auth-overlay" id="authOverlay" aria-hidden="true">
+  <div class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <button class="auth-close" id="authClose" aria-label="Close">&times;</button>
+
+    <div class="auth-brand">NOVA<span>.</span></div>
+    <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+    <h2 id="authTitle">Welcome back.</h2>
+    <p class="auth-description" id="authDescription">
+      Sign in to continue your journey.
+    </p>
+
+    <form id="authForm">
+      <div class="auth-name-field" id="nameField" hidden>
+        <label for="authName">Full name</label>
+        <input id="authName" name="name" type="text"
+          placeholder="Your name" autocomplete="name">
+      </div>
+
+      <label for="authEmail">Email address</label>
+      <input id="authEmail" name="email" type="email"
+        placeholder="you@example.com" autocomplete="email" required>
+
+      <label for="authPassword">Password</label>
+      <div class="password-wrap">
+        <input id="authPassword" name="password" type="password"
+          placeholder="Enter your password"
+          autocomplete="current-password" minlength="8" required>
+        <button type="button" id="togglePassword">Show</button>
+      </div>
+
+      <p class="auth-message" id="authMessage" role="status"></p>
+      <button class="button primary auth-submit" id="authSubmit" type="submit">
+        Sign In ↗
+      </button>
+    </form>
+
+    <p class="auth-switch">
+      <span id="switchText">New to NOVA?</span>
+      <button type="button" id="authSwitch">Create an account</button>
+    </p>
+
+    <p class="auth-demo-note">
+      Portfolio demo only — real accounts require secure authentication.
+    </p>
+  </div>
+</div>
+
 </body>
 </html>
